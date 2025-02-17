@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: `${APP_NAME}. ${APP_SLOGAN}`,
   },
   description: APP_DESCRIPTION,
-} 
+}
 
 
 export default function RootLayout({
