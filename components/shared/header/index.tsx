@@ -18,12 +18,12 @@ export default function Header() {
                             className="flex items-center header-button font-extrabold text-2xl m-1"
                             >
                                 <Image
-                                src="/icons/logo.svg"
-                                width={40}
-                                height={40}
+                                src="/icons/logo-01.svg"
+                                width={400}
+                                height={400}
                                 alt={`${APP_NAME} logo`}
                                 />
-                                {APP_NAME}
+                                {/* {APP_NAME} */}
 
                         </Link>
 
@@ -41,7 +41,7 @@ export default function Header() {
             </div>
             <div className="flex items-center px-3 mb-[1px] bg-gray-800">
                 <Button variant='ghost'
-                className="header-button flex items-center gap-1 text-base [&_svg]:size-6"
+                className="dark header-button flex items-center gap-1 text-base [&_svg]:size-6"
                 >
                  <MenuIcon/>
                  All

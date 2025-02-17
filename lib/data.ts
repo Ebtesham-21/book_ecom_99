@@ -18,10 +18,7 @@ const data = {
         name: "Best Sellers",
         href:"/search?tag=Best Sellers"
         },
-        {
-        name: "Best Sellers",
-        href:"/search?tag=Best Sellers"
-        },
+      
         {
         name: "Browsing History",
         href:"/#browsing-history",
