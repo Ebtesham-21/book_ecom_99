@@ -37,6 +37,31 @@ const data = {
         },
 
     ],
+    carousels: [
+        {
+            title: 'Most Popular  Picture Books For Sale  ',
+            buttonCaption: 'Buy Now',
+            image: 'images/banner.png',
+            url: '/search?category=picture',
+            isPublished: true,
+        }, 
+        {
+            title: 'Best Sellers in Story Books',
+            buttonCaption: 'Buy Now',
+            image: 'images/banner.png',
+            url: '/search?category=story',
+            isPublished: true,
+
+        },
+        {
+            title: 'Best Deals in Coloring Books',
+            buttonCaption: 'Buy Now',
+            image: 'images/banner.png',
+            url: '/search?category=coloring',
+            isPublished: true,
+
+        },
+    ],
 }
 
 export default data
