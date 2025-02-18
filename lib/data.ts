@@ -32,7 +32,7 @@ const products: IProductInput[] = [
     },
     {
         name: 'Lily Day',
-        slug: toSlug('Lily Day'),
+        slug: toSlug('Lily Day2'),
         category: 'Kids Books',
         images: ['/images/book2.png'],
         tags: ['new-arrival'],
