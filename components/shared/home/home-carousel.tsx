@@ -13,7 +13,10 @@ import {
 
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
+import {useState} from 'react';
+import type {UseEmblaCarouselType} from 'embla-carousel-react';
+import useEmblaCarousel from 'embla-carousel-react'
 
 export function HomeCarousel({
     items,
@@ -25,16 +28,28 @@ export function HomeCarousel({
         buttonCaption: string
     }[]
 }) {
-    const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }))
+    const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+    const [emblaRef, embla] = useEmblaCarousel();
     
 
     return (
         <Carousel
+        ref={emblaRef}
         dir='ltr'
         plugins={[plugin.current]}
         className='w-full mx-auto'
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
+        onSelect = {() => {
+            if (embla) {
+              if (!embla.canScrollPrev()) {
+                console.log("Already at the first slide");
+              }
+              if (!embla.canScrollNext()) {
+                console.log("Already at the last slide");
+              }
+            }
+          }}
         >
             <CarouselContent>
                 {items.map((item) => (
@@ -65,8 +80,12 @@ export function HomeCarousel({
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className='left-0 md:left-12'/>
-            <CarouselNext className='right-0 md:right-12'/>
+            <CarouselPrevious className='left-0 md:left-12'
+            onClick={(e) => e.preventDefault()}
+            />
+            <CarouselNext className='right-0 md:right-12'
+               onClick={(e) => e.preventDefault()}
+            />
 
         </Carousel>
     )
