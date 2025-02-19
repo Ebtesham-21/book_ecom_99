@@ -28,7 +28,7 @@ export default async function Page() {
         text: 'See More',
         href:'/search',
       },
-      items: getAllCategories.map((category)=> ({
+      items: categories.map((category)=> ({
         name: category,
         image: `/images/categories/${toSlug(category)}.jpg`,
         href: `/search?category=${category}`,
@@ -65,14 +65,15 @@ export default async function Page() {
     },
   ]
 
-  return
+  return(
   <>
-  <HomeCarousel items={data.carousels} />
-  <div className="md:p-4 md:space-y-4 bg-border">
-    <HomeCard cards={cards}/>
+    <HomeCarousel items={data.carousels} />
+    <div className="md:p-4 md:space-y-4 bg-border">
+      <HomeCard cards={cards}/>
 
-  </div>
+    </div>
   </>
+  )
 
 
 
