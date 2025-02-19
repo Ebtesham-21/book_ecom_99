@@ -15,7 +15,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button';
 import {useState} from 'react';
-import type {UseEmblaCarouselType} from 'embla-carousel-react';
+
 import useEmblaCarousel from 'embla-carousel-react'
 
 export function HomeCarousel({
