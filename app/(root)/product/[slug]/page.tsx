@@ -10,6 +10,7 @@ import ProductGallery from '@/components/shared/product/product-gallery'
 import { Separator } from '@/components/ui/separator'
 import ProductSlider from '@/components/shared/product/product-slider'
 import { describe } from 'node:test'
+import Rating from '@/components/shared/product/rating'
 
 export async function generateMetadata(props: {
     params: Promise<{slug: string}>
@@ -61,10 +62,33 @@ export default async function ProductDetails (props: {
                                 <span>{product.numReviews} ratings</span>
                             </div>
                             <Separator/>
-                            
+                            <div className='flex gap-3'>
+                                <ProductPrice
+                                    price={product.price}
+                                    listPrice={product.listPrice}
+                                    isDeal = {product.tags.includes('todays-deal')}
+                                    forListing={false}
+                                />
+
+                            </div>
+
 
                         </div>
 
+                    </div>
+                    <div>
+                        <SelectVariant
+                            product={product}
+                            size={size || product.sizes[0]}
+                            color= {color || product.colors[0]}
+                        />
+                    </div>
+                    <Separator className='my-2'/>
+                    <div className='flex flex-col gap-2'>
+                        <p className='p-bold-20 text-gray-600'>Description:</p>
+                        <p className='p-medium-16 lg:p-regular-18'>
+                            {product.description}
+                        </p>
                     </div>
                 </div>
             </section>
