@@ -74,7 +74,7 @@ const ProductPrice = ({
                 </div>
             </div>
         </div>
-    ) : (
+    ) ;  (
         <div className=' '>
             <div className='flex justify-center gap-3'>
                 <div className='text-3xl text-orange-700'>
